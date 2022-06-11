@@ -1,1 +1,1 @@
-A simple recipe application
+A simple recipe application 
