@@ -1,12 +1,17 @@
-// import logo from './logo.svg';
-import './App.scss';
+import './assets/styles/common.scss';
+import Header from './views/layouts/Header';
+import List from './views/pages/List';
+import {BrowserRouter} from 'react-router-dom'
+import CategoryList from './views/pages/CategoryList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>sample header</h1>
-      </header>
+      <BrowserRouter>
+        <CategoryList/>
+        <Header/>
+        <List/>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,83 @@
+// Primary palette
+$clr_black: #101010; // black
+$clr_white: #fff; // white
+$clr_red: #eb0a1e; // toyota red
+
+// Secondary palette
+$clr_grey_dark: #3a3a3a; // dark grey
+$clr_grey_mid: #808080; // mid grey
+$clr_grey: #ccc; // grey
+$clr_grey_light: #eee; // light grey
+$clr_off_white: #f5f5f5; // off white
+
+$clr_red_2: #d1091b;
+$clr_black_0: #000;
+$clr_black_1a: #1a1a1a;
+
+$clr_error: $clr_red_2;
+
+// Webfonts
+
+$notoSansLao-webfont-default: "Noto Sans Lao", ToyotaType, Arial, sans-serif ;
+$notoSansLao-font-path: "../fonts/noto-sans-lao/";
+$notoSansLao-webfont: "Noto Sans Lao";
+
+$notoSansKhmer-webfont-default: "Noto Sans Khmer", ToyotaType, Arial, sans-serif;
+$notoSansKhmer-font-path: "../fonts/noto-sans-khmer/";
+$notoSansKhmer-webfont: "Noto Sans Khmer";
+
+// Padding size +8px
+
+$pad_size_1: 8px;
+$pad_size_2: 16px;
+$pad_size_3: 24px;
+$pad_size_4: 32px;
+$pad_size_5: 40px;
+$pad_size_6: 48px;
+$pad_size_7: 56px;
+$pad_size_8: 64px;
+
+// Content wrapper
+
+$width_content: 1280px;
+
+// Grid size
+
+$grid_gutter_lrg: $pad_size_8;
+$grid_gutter_med: $pad_size_5;
+$grid_gutter_sml: $pad_size_2;
+
+// Animations
+
+$anim_duration: 250ms;
+
+// Media queries
+
+$small_screen: 750px;
+$small_screen_up: 751px;
+$medium_screen: 970px;
+$medium_screen_up: 971px;
+$large_screen: 1170px;
+$large_screen_up: 1171px;
+$xlarge_screen: 1479px;
+$xlarge_screen_up: 1480px;
+$small_and_down: "(max-width: #{$small_screen})";
+$small_and_up: "(min-width: #{$small_screen_up})";
+$small_to_medium: "(min-width: #{$small_screen_up}) and (max-width: #{$medium_screen})";
+$small_to_large: "(min-width: #{$small_screen_up}) and (max-width: #{$large_screen})";
+$medium_and_down: "(max-width: #{$medium_screen})";
+$medium_and_up: "(min-width: #{$medium_screen_up})";
+$medium_to_large: "(min-width: #{$medium_screen_up}) and (max-width: #{$large_screen})";
+$medium_to_xlarge: "(min-width: #{$medium_screen_up}) and (max-width: #{$xlarge_screen})";
+$large_and_down: "(max-width: #{$large_screen})";
+$large_and_up: "(min-width: #{$large_screen_up})";
+$large_to_xlarge: "(min-width: #{$large_screen_up}) and (max-width: #{$xlarge_screen})";
+$xlarge_and_down: "(max-width: #{$xlarge_screen})";
+$xlarge_and_up: "(min-width: #{$xlarge_screen_up})";
+
+$orientation_landscape: "(orientation: landscape)";
+$orientation_portrait: "(orientation: portrait)";
+
+$desktop_large_size: "(min-height: 800px) and (orientation: landscape)";
+$small_and_down_portrait: "(max-width: #{$small_screen}) and (orientation: portrait)";
+$medium_and_down_landscape: "(max-width: #{$medium_screen}) and (orientation: landscape)";
