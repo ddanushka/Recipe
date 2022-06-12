@@ -17,6 +17,7 @@ function List() {
       <header className="list__header">
         <h1>sample header</h1>
       </header>
+      <div className="list__container">
       {data && data.length ? (
         data.map((item) => (
           <Card
@@ -29,6 +30,7 @@ function List() {
       ) : (
         <span>Loading</span>
       )}
+      </div>
     </div>
   );
 }

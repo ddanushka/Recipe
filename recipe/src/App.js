@@ -1,16 +1,14 @@
 import './assets/styles/common.scss';
-import Header from './views/layouts/Header';
-import List from './views/pages/List';
 import {BrowserRouter} from 'react-router-dom'
-import CategoryList from './views/pages/CategoryList';
+import Header from './views/layouts/Header';
+import Body from './views/layouts/Body';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
-        <CategoryList/>
         <Header/>
-        <List/>
+        <Body/>
       </BrowserRouter>
     </div>
   );

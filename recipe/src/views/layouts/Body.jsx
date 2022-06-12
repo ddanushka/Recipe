@@ -1,10 +1,16 @@
+import CategoryList from "../pages/CategoryList";
+import List from "../pages/List";
+import Details from "../pages/Details";
+
 function Body() {
   return (
-    <div className="header">
-      <header className="App-header">
-        <h1>sample header</h1>
-      </header>
-    </div>
+    <section className="body">
+      <div className="body__container">
+      <CategoryList/>
+      <List/>
+      <Details/>
+      </div>
+    </section>
   );
 }
 

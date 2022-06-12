@@ -1,6 +1,6 @@
 import Card from "../components/Card";
 import { useState, useEffect } from "react";
-import { Categories } from "../../controller/getData";
+import { Categories } from "../../data/getData";
 
 function CategoryList() {
   const [data, setData] = useState([]);
@@ -15,20 +15,22 @@ function CategoryList() {
   return (
     <div className="list">
       <header className="list__header">
-        <h1>Select Catergory</h1>
+        <h1>sample header</h1>
       </header>
-      {data && data.length ? (
-        data.map((item) => (
-          <Card
-            key={item.idCategory}
-            id={item.idCategory}
-            imageUrl={item.strCategoryThumb}
-            title={item.strCategory}
-          />
-        ))
-      ) : (
-        <span>Loading</span>
-      )}
+      <div className="list__container">
+        {data && data.length ? (
+          data.map((item) => (
+            <Card
+              key={item.idCategory}
+              id={item.idCategory}
+              imageUrl={item.strCategoryThumb}
+              title={item.strCategory}
+            />
+          ))
+        ) : (
+          <span>Loading</span>
+        )}
+      </div>
     </div>
   );
 }

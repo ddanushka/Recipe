@@ -1,10 +1,11 @@
+import SearchBox from "../components/SearchBox";
+
 function Header() {
   return (
-    <div className="header">
-      <header className="App-header">
+    <section className="header">
         <h1>sample header</h1>
-      </header>
-    </div>
+        <SearchBox/>
+    </section>
   );
 }
 
