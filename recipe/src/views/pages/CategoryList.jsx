@@ -7,20 +7,21 @@ function CategoryList() {
 
   useEffect(() => {
     Categories().then((data) => {
-      setData(data);
+      setData(data.categories);
       console.log(data);
     });
   }, []);
 
   return (
-    <div className="list">
+    <div className="category-list">
       <header className="list__header">
-        <h1>sample header</h1>
+        <h1>select category</h1>
       </header>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (
             <Card
+              link={`/category/${item.strCategory}`}
               key={item.idCategory}
               id={item.idCategory}
               imageUrl={item.strCategoryThumb}

@@ -1,12 +1,12 @@
 import Card from "../components/Card";
 import { useState, useEffect } from "react";
-import { getCategory } from "../../data/getData";
+import { getSearchResult } from "../../data/getData";
 
-function List() {
+function SearchResult() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getCategory('Beef').then((data) => {
+    getSearchResult('Ar').then((data) => {
       setData(data.meals);
       console.log(data);
     });
@@ -35,4 +35,4 @@ function List() {
   );
 }
 
-export default List;
+export default SearchResult;

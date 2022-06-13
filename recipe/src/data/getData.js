@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getData = async (url) => {
     const { data } = await axios.get(url);
-    return data.categories;
+    return data;
 };
 
 export function Categories() {
@@ -15,4 +15,8 @@ export function getCategory(category) {
 
 export function getRecipe(recipeId) {
     return getData(`https://www.themealdb.com/api/json/v1/1/lookup.php?apiKey=${process.env.REACT_APP_API_KEY}&i=${recipeId}`);
+}
+
+export function getSearchResult(keyword) {
+    return getData(`www.themealdb.com/api/json/v1/1/search.php?${process.env.REACT_APP_API_KEY}&s=Arrabiata${keyword}`);
 }

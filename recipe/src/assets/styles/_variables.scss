@@ -1,59 +1,17 @@
 // Primary palette
-$clr_black: #101010; // black
 $clr_white: #fff; // white
-$clr_active: #eb0a1e; // toyota red
-
-// Secondary palette
+$clr_black_opacity: rgba(0, 0, 0, 0.25);
 $clr_grey_dark: #3a3a3a; // dark grey
 $clr_grey_mid: #808080; // mid grey
 $clr_grey: #ccc; // grey
 $clr_grey_light: #eee; // light grey
 $clr_off_white: #bbb ;
-
-
 $clr_red: #d1091b;
-$clr_black_0: #000;
-$clr_black_1a: #1a1a1a;
-
-$clr_error: $clr_red;
-
-// Webfonts
-
-$notoSansLao-webfont-default: "Noto Sans Lao", ToyotaType, Arial, sans-serif ;
-$notoSansLao-font-path: "../fonts/noto-sans-lao/";
-$notoSansLao-webfont: "Noto Sans Lao";
-
-$notoSansKhmer-webfont-default: "Noto Sans Khmer", ToyotaType, Arial, sans-serif;
-$notoSansKhmer-font-path: "../fonts/noto-sans-khmer/";
-$notoSansKhmer-webfont: "Noto Sans Khmer";
-
-// Padding size +8px
-
-$pad_size_1: 8px;
-$pad_size_2: 16px;
-$pad_size_3: 24px;
-$pad_size_4: 32px;
-$pad_size_5: 40px;
-$pad_size_6: 48px;
-$pad_size_7: 56px;
-$pad_size_8: 64px;
 
 // Content wrapper
-
 $width_content: 1280px;
 
-// Grid size
-
-$grid_gutter_lrg: $pad_size_8;
-$grid_gutter_med: $pad_size_5;
-$grid_gutter_sml: $pad_size_2;
-
-// Animations
-
-$anim_duration: 250ms;
-
 // Media queries
-
 $small_screen: 750px;
 $small_screen_up: 751px;
 $medium_screen: 970px;
