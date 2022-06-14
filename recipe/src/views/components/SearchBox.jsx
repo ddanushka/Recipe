@@ -1,9 +1,25 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function SearchBox() {
+  const navigate = useNavigate();
+  const [text, setText] = useState("");
+
+  const searchText = (e) => {
+    setText(e.target.value);
+    e.target.value.length > 0
+      ? navigate("/search/" + e.target.value)
+      : navigate("/");
+  };
+  const clearSearch = () => {
+    setText("");
+    navigate("/");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>sample header</h1>
-      </header>
+      <input className="search-bar" onChange={searchText} value={text} />
+      <button onClick={clearSearch}>clear</button>
     </div>
   );
 }

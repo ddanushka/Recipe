@@ -7,13 +7,16 @@ import { Routes, Route, Link } from "react-router-dom";
 function Body() {
   return (
     <section className="body">
-      <div className="body__container">
-        <Routes>
-          <Route path="/" caseSensitive={false} element={<CategoryList />} />
-          <Route path="/category/:name" caseSensitive={true} element={<List />} />
-          <Route path="/details/:id" caseSensitive={true} element={<Details />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" caseSensitive={false} element={<CategoryList />} />
+        <Route path="/category/:name" caseSensitive={true} element={<List />} />
+        <Route path="/details/:id" caseSensitive={true} element={<Details />} />
+        <Route
+          path="/search/:keyword"
+          caseSensitive={true}
+          element={<SearchResult />}
+        />
+      </Routes>
     </section>
   );
 }

@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
 import { getRecipe } from "../../data/getData";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Details() {
+  let params = useParams();
+  let navigate = useNavigate();
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getRecipe("52803").then((data) => {
+    getRecipe(params.id).then((data) => {
       setData(data.meals[0]);
-      console.log(data);
+      console.log(params);
     });
-  }, []);
+  }, [params]);
 
   return (
     <div className="recipe-details">
       {data ? (
         <>
-          <h1>{data.strMeal}</h1>
+          <button onClick={() => navigate(-1)}>Back</button>
+          <h1 className="header">{data.strMeal}</h1>
+          <a href={data.strYoutube}>{data.strYoutube}</a>
           <iframe
             title={data.strMeal}
             id="ytplayer"
             type="text/html"
             width="640"
             height="360"
-            src={data.strYoutube}
+            src={"https://www.youtube.com/embed?v=1ahpSTf_Pvk"}
           ></iframe>
           <img src={data.strMealThumb} alt={data.strMeal} />
           <p className="decscription">{data.strInstructions}</p>

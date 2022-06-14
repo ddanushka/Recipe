@@ -18,5 +18,5 @@ export function getRecipe(recipeId) {
 }
 
 export function getSearchResult(keyword) {
-    return getData(`www.themealdb.com/api/json/v1/1/search.php?${process.env.REACT_APP_API_KEY}&s=Arrabiata${keyword}`);
+    return getData(`https://www.themealdb.com/api/json/v1/1/search.php?apiKey=${process.env.REACT_APP_API_KEY}&s=${keyword}`);
 }

@@ -14,14 +14,12 @@ function CategoryList() {
 
   return (
     <div className="category-list">
-      <header className="list__header">
-        <h1>select category</h1>
-      </header>
+      <h1 className="header">select category</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (
             <Card
-              link={`/category/${item.strCategory}`}
+              link={"/category/" + item.strCategory}
               key={item.idCategory}
               id={item.idCategory}
               imageUrl={item.strCategoryThumb}

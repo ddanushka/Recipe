@@ -1,7 +1,5 @@
 @import "./normalize";
 @import "./_variables.scss";
-/* Normalize.css
------------------------------------------------ */
 
 * {
   box-sizing: border-box;
@@ -137,5 +135,10 @@ code {
         }
       }
     }
+  }
+}
+.list {
+  .list__container {
+    align-items: start;
   }
 }
