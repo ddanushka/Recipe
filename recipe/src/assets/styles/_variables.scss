@@ -5,7 +5,6 @@ $clr_grey_dark: #3a3a3a;
 $clr_grey: #ccc;
 $clr_grey_light: #eee;
 $clr_off_white: #bbb ;
-$clr_red: #d1091b;
 
 // Content wrapper
 $width_content: 1280px;
@@ -32,10 +31,3 @@ $large_and_up: "(min-width: #{$large_screen_up})";
 $large_to_xlarge: "(min-width: #{$large_screen_up}) and (max-width: #{$xlarge_screen})";
 $xlarge_and_down: "(max-width: #{$xlarge_screen})";
 $xlarge_and_up: "(min-width: #{$xlarge_screen_up})";
-
-$orientation_landscape: "(orientation: landscape)";
-$orientation_portrait: "(orientation: portrait)";
-
-$desktop_large_size: "(min-height: 800px) and (orientation: landscape)";
-$small_and_down_portrait: "(max-width: #{$small_screen}) and (orientation: portrait)";
-$medium_and_down_landscape: "(max-width: #{$medium_screen}) and (orientation: landscape)";

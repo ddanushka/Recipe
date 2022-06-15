@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FiX, FiSearch } from "react-icons/fi";
 
 function SearchBox() {
   const navigate = useNavigate();
@@ -17,9 +18,10 @@ function SearchBox() {
   };
 
   return (
-    <div className="App">
-      <input className="search-bar" onChange={searchText} value={text} />
-      <button onClick={clearSearch}>clear</button>
+    <div className="search-bar">
+      <FiSearch className="search-bar__icon" />
+      <input placeholder="Search Recipes..." onChange={searchText} value={text} />
+      <button className="close" onClick={clearSearch}><FiX /></button>
     </div>
   );
 }

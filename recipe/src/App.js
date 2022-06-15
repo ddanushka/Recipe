@@ -5,7 +5,7 @@ import Body from './views/layouts/Body';
 
 function App() {
   return (
-    <div className="app">
+    <div className="recipe">
       <BrowserRouter>
         <Header/>
         <Body/>

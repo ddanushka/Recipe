@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 
 function Body() {
   return (
-    <section className="body">
+    <section className="body-content">
       <Routes>
         <Route path="/" caseSensitive={false} element={<CategoryList />} />
         <Route path="/category/:name" caseSensitive={true} element={<List />} />

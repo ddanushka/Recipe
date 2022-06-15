@@ -2,11 +2,11 @@ import SearchBox from "../components/SearchBox";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  
   return (
     <section className="header">
-      <button onClick={() => navigate(-1)}>back</button>
-      <h1>sample header</h1>
+      <span onClick={() => navigate("/")} className="logo">LOGO</span>
       <SearchBox />
     </section>
   );

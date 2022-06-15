@@ -17,7 +17,7 @@ function CategoryList() {
 
   return (
     <div className="category-list">
-      <h1>select category</h1>
+      <h1>Select a category</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (
