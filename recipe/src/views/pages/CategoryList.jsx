@@ -1,15 +1,18 @@
 import Card from "../components/Card";
 import { useState, useEffect } from "react";
 import { Categories } from "../../data/getData";
+import Status from "../components/Status";
 
 function CategoryList() {
   const [data, setData] = useState([]);
+  const [status, setStatus] = useState();
+
 
   useEffect(() => {
     Categories().then((data) => {
       setData(data.categories);
-      console.log(data)
-    }).catch(err => console.log(err.message));
+    }).catch((err) => setStatus(err.message));
+
   }, []);
 
   return (
@@ -27,9 +30,7 @@ function CategoryList() {
             />
           ))
         ) : (
-          data == null ?
-          <span>data not found</span> :
-          <span>Loadingss</span>
+          <Status data={data} error={status} />
         )}
       </div>
     </div>

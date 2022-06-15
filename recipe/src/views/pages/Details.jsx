@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { getRecipe } from "../../data/getData";
 import { useParams, useNavigate } from "react-router-dom";
+import Status from "../components/Status";
 
 function Details() {
   let params = useParams();
   let navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [status, setStatus] = useState();
+
 
   useEffect(() => {
     getRecipe(params.id).then((data) => {
       setData(data.meals[0]);
-    }).catch(a => console.log(a));
-    console.log(data)
+    }).catch((err) => setStatus(err.message));
   }, [params]);
 
   return (
@@ -49,7 +51,7 @@ function Details() {
           </div>
         </>
       ) : (
-        <span>Loading</span>
+        <Status data={data} error={status} />
       )}
     </div>
   );

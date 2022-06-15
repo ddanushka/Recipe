@@ -16,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $clr_grey_light;
 }
 
 code {
@@ -26,6 +27,12 @@ code {
 .app {
   max-width: $width_content;
   margin: 0 auto;
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
 }
 
 .header {
@@ -56,6 +63,7 @@ code {
       background-color: $clr_off_white;
     }
   }
+  
 
   .list,
   .category-list {
@@ -140,5 +148,22 @@ code {
 .list {
   .list__container {
     align-items: start;
+  }
+}
+
+.status {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $clr_white;
+  background-color: $clr_black_opacity;
+  .status__text {
+    font-size: 2em;
+    font-weight: 100;
   }
 }

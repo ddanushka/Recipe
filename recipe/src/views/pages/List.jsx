@@ -3,24 +3,24 @@ import Status from "../components/Status";
 import { useState, useEffect } from "react";
 import { getCategory } from "../../data/getData";
 import { useParams } from "react-router-dom";
+import {FiChevronLeft ,FiSearch} from "react-icons/fi";
 
 function List() {
   let params = useParams();
   const [data, setData] = useState([]);
-  const [error, setError] = useState();
+  const [status, setStatus] = useState();
 
   useEffect(() => {
     getCategory(params.name)
       .then((data) => {
         setData(data.meals);
-        console.log(data);
       })
-      .catch((err) => setError(err.message));
+      .catch((err) => setStatus(err.message));
   }, [params.name]);
 
   return (
     <div className="list">
-      <h1>meals in {params.name}</h1>
+      <h1>meals in <button><FiChevronLeft /></button> <FiSearch/> {params.name}</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (
@@ -33,7 +33,7 @@ function List() {
             />
           ))
         ) : (
-          <Status data={data} error={error} />
+          <Status data={data} error={status} />
         )}
       </div>
     </div>
