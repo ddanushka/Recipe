@@ -18,7 +18,7 @@ function SearchResult() {
 
   return (
     <div className="list">
-      <h1>Search results for "{params.keyword}"</h1>
+      <h1>Search results for "<span className="bold">{params.keyword}</span>"</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (

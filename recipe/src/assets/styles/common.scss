@@ -53,14 +53,14 @@ body {
     align-items: center;
     position: relative;
     @media #{$small_and_down} {
-      padding-left: 100px;
+      padding-left: 90px;
     }
 
     .logo {
       display: flex;
       width: 200px;
       @media #{$small_and_down} {
-        width: 100px;
+        width: 88px;
       }
       left: 0;
       position: absolute;
@@ -71,6 +71,7 @@ body {
     .search-bar {
       position: relative;
       max-width: 430px;
+      z-index: 2;
 
       input {
         font-size: 1.5rem;
