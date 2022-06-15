@@ -10,13 +10,12 @@ function SearchResult() {
   useEffect(() => {
     getSearchResult(params.keyword).then((data) => {
       setData(data.meals);
-      console.log(data);
     });
   }, [params.keyword]);
 
   return (
     <div className="list">
-      <h1 className="header">Search results for "{params.keyword}"</h1>
+      <h1>Search results for "{params.keyword}"</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (

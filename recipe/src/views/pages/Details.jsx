@@ -10,8 +10,8 @@ function Details() {
   useEffect(() => {
     getRecipe(params.id).then((data) => {
       setData(data.meals[0]);
-      console.log(params);
-    });
+    }).catch(a => console.log(a));
+    console.log(data)
   }, [params]);
 
   return (
@@ -19,7 +19,7 @@ function Details() {
       {data ? (
         <>
           <button onClick={() => navigate(-1)}>Back</button>
-          <h1 className="header">{data.strMeal}</h1>
+          <h1>{data.strMeal}</h1>
           <a href={data.strYoutube}>{data.strYoutube}</a>
           <iframe
             title={data.strMeal}

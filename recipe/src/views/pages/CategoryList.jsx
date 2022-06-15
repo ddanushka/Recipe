@@ -8,13 +8,13 @@ function CategoryList() {
   useEffect(() => {
     Categories().then((data) => {
       setData(data.categories);
-      console.log(data);
-    });
+      console.log(data)
+    }).catch(err => console.log(err.message));
   }, []);
 
   return (
     <div className="category-list">
-      <h1 className="header">select category</h1>
+      <h1>select category</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (
@@ -27,7 +27,9 @@ function CategoryList() {
             />
           ))
         ) : (
-          <span>Loading</span>
+          data == null ?
+          <span>data not found</span> :
+          <span>Loadingss</span>
         )}
       </div>
     </div>

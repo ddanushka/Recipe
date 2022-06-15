@@ -2,7 +2,7 @@ import CategoryList from "../pages/CategoryList";
 import List from "../pages/List";
 import Details from "../pages/Details";
 import SearchResult from "../pages/SearchResult";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function Body() {
   return (
