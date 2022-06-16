@@ -1,0 +1,324 @@
+@import "./normalize";
+@import "./_variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $clr_grey_light;
+}
+
+// App container
+.recipe {
+  max-width: $width_content;
+  margin: 0 auto;
+
+  svg {
+    stroke-width: 1px;
+  }
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    &:disabled {
+      pointer-events: none;
+    }
+    vertical-align: middle;
+  }
+
+  button,
+  input,
+  h1,
+  svg {
+    font-weight: 100;
+    font-size: 2rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .header {
+    display: grid;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @media #{$small_and_down} {
+      padding-left: 90px;
+    }
+
+    .logo {
+      display: flex;
+      width: 200px;
+      cursor: pointer;
+      @media #{$small_and_down} {
+        width: 88px;
+      }
+      left: 0;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar {
+      position: relative;
+      max-width: 430px;
+      z-index: 2;
+
+      input {
+        font-size: 1.5rem;
+        line-height: 1;
+        background: $clr_white_opacity;
+        color: $clr_grey_dark;
+        border: 1px solid $clr_off_white;
+        width: calc(100% - 50px);
+        padding: 10px 10px 12px 68px;
+        margin-right: 10px;
+        outline: none;
+        position: relative;
+        &:focus,
+        &:focus-visible {
+          border-color: $clr_grey_dark;
+        }
+      }
+      &__icon {
+        left: 10px;
+        opacity: 0.2;
+        z-index: 1;
+      }
+      .close,
+      &__icon {
+        position: absolute;
+        height: 100%;
+        width: 40px;
+      }
+      .close {
+        transition: ease 200ms;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .body-content {
+    overflow: auto;
+    height: calc(100vh - 110px);
+    padding: 0 40px 20px 36px;
+    @media #{$small_and_down} {
+      padding: 0 20px 20px 18px;
+    }
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $clr_grey_dark;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $clr_grey_light;
+
+      &:active,
+      &:hover {
+        background-color: $clr_off_white;
+      }
+    }
+    .back-btn {
+      margin-right: 10px;
+    }
+    .list__container {
+      display: grid;
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $clr_black_opacity;
+          transition: ease 600ms;
+        }
+        &:hover {
+          &::after {
+            opacity: 0.4;
+            z-index: -2;
+          }
+          img {
+            filter: blur(0);
+            transform: scale(1.06);
+          }
+        }
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+          filter: blur(1px);
+          transition: ease 1200ms;
+        }
+
+        .card__title {
+          position: absolute;
+          z-index: 4;
+          width: 100%;
+          text-align: center;
+          color: $clr_white;
+        }
+      }
+    }
+
+    // General listing styles
+    .list {
+      padding-bottom: 40px;
+
+      .list__container {
+        align-items: start;
+        grid-template-columns: repeat(4, calc(25% - 24px));
+        grid-gap: 32px;
+        @media #{$small_to_medium} {
+          grid-template-columns: repeat(3, calc(33% - 20px));
+        }
+        @media #{$small_and_down} {
+          grid-template-columns: repeat(2, calc(50% - 16px));
+        }
+        .card {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Listing styles for category
+    .category-list {
+      .list__container {
+        grid-template-columns: repeat(5, 200px);
+        grid-auto-rows: 200px;
+        grid-gap: 40px;
+        justify-content: space-between;
+        @media #{$medium_to_large} {
+          grid-template-columns: repeat(4, 20vw);
+          grid-auto-rows: 20vw;
+          grid-gap: 4vw;
+        }
+        @media #{$small_to_medium} {
+          grid-template-columns: repeat(3, 28vw);
+          grid-auto-rows: 28vw;
+          grid-gap: 3vw;
+        }
+        @media #{$small_and_down} {
+          grid-template-columns: repeat(2, 44vw);
+          grid-auto-rows: 44vw;
+          grid-gap: calc(8vw / 2);
+        }
+      }
+    }
+  }
+
+  // Status msg
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    color: $clr_white;
+    background-color: $clr_black_opacity;
+    .status__text {
+      font-size: 2rem;
+      font-weight: 100;
+    }
+  }
+
+  // Recipe details page styles
+  .recipe-details {
+    .detail-grid {  
+      font-size: 1.2rem;
+      line-height: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, calc(25% - 24px));
+      grid-template-rows: auto;
+      grid-gap: 32px;
+      grid-template-areas: 
+      "img img desc desc"
+      "img img ind ind"
+      ". . footer footer";
+      @media #{$small_and_down} {
+        grid-template-columns: repeat(1, calc(100%));
+        grid-template-areas: 
+      "img" 
+      "desc"
+      "ind"
+      " ."
+      "footer";
+      }
+      
+      .media {
+        grid-area: img;
+        img {
+          width: 100%;
+        }
+        iframe {
+          margin-top: 32px;
+          width: 100%;
+          border: none;
+        }
+      }
+      
+      .decscription {
+        white-space: pre-line;
+        font-weight: 100;
+        grid-area: desc;
+      }
+      .ind-list {
+        grid-area: ind;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      i {
+        grid-area: footer;
+        a {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 100%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
