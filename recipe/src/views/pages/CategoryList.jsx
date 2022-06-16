@@ -7,7 +7,6 @@ function CategoryList() {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState();
 
-
   useEffect(() => {
     Categories().then((data) => {
       setData(data.categories);
