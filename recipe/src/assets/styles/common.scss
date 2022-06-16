@@ -19,6 +19,7 @@ body {
   background-color: $clr_grey_light;
 }
 
+// App container
 .recipe {
   max-width: $width_content;
   margin: 0 auto;
@@ -31,6 +32,9 @@ body {
     border: none;
     padding: 0;
     cursor: pointer;
+    &:disabled {
+      pointer-events: none;
+    }
   }
 
   button,
@@ -41,13 +45,16 @@ body {
     font-size: 2rem;
   }
 
+  .hidden {
+    display: none;
+  }
+
   .bold {
     font-weight: bold;
   }
 
   .header {
-    display: flex;
-    flex: 1;
+    display: grid;
     height: 100px;
     justify-content: center;
     align-items: center;
@@ -100,13 +107,24 @@ body {
         height: 100%;
         width: 40px;
       }
+      .close {
+        transition: ease 200ms;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 
   .body-content {
     overflow: auto;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 110px);
     padding: 0 40px 20px 36px;
+    @media #{$small_and_down} {
+      padding: 0 20px 20px 18px;
+    }
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -148,6 +166,7 @@ body {
             z-index: -2;
           }
           img {
+            filter: blur(0);
             transform: scale(1.06);
           }
         }
@@ -161,6 +180,7 @@ body {
 
         img {
           width: 100%;
+          filter: blur(1px);
           transition: ease 1200ms;
         }
 
@@ -174,16 +194,19 @@ body {
       }
     }
 
+    // General listing styles
     .list {
+      padding-bottom: 40px;
+
       .list__container {
         align-items: start;
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(4, calc(25% - 24px));
         grid-gap: 32px;
         @media #{$small_to_medium} {
-          grid-template-columns: repeat(3, auto);
+          grid-template-columns: repeat(3, calc(33% - 20px));
         }
         @media #{$small_and_down} {
-          grid-template-columns: repeat(2, auto);
+          grid-template-columns: repeat(2, calc(50% - 16px));
         }
         .card {
           img {
@@ -193,7 +216,7 @@ body {
       }
     }
 
-
+    // Listing styles for category
     .category-list {
       .list__container {
         grid-template-columns: repeat(4, 16vw);
@@ -211,14 +234,15 @@ body {
           grid-gap: 6vw;
         }
         @media #{$small_and_down} {
-          grid-template-columns: repeat(2, 34vw);
-          grid-auto-rows: 34vw;
-          grid-gap: 8vw;
+          grid-template-columns: repeat(2, 40vw);
+          grid-auto-rows: 40vw;
+          grid-gap: calc(20vw / 2);
         }
       }
     }
   }
 
+  // Status msg
   .status {
     display: flex;
     justify-content: center;
@@ -233,6 +257,64 @@ body {
     .status__text {
       font-size: 2rem;
       font-weight: 100;
+    }
+  }
+
+  // Recipe details page styles
+  .recipe-details {
+    .detail-grid {  
+      font-size: 1.2rem;
+      line-height: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, calc(25% - 24px));
+      grid-template-rows: auto;
+      grid-gap: 32px;
+      grid-template-areas: 
+      "img img desc desc"
+      "img img ind ind"
+      ". . footer footer";
+      @media #{$small_and_down} {
+        grid-template-columns: repeat(1, calc(100%));
+        grid-template-areas: 
+      "img" 
+      "desc"
+      "ind"
+      " ."
+      "footer";
+      }
+      
+      .media {
+        grid-area: img;
+        img {
+          width: 100%;
+        }
+        iframe {
+          margin-top: 32px;
+          width: 100%;
+          border: none;
+        }
+      }
+      
+      .decscription {
+        white-space: pre-line;
+        font-weight: 100;
+        grid-area: desc;
+      }
+      .ind-list {
+        grid-area: ind;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      i {
+        grid-area: footer;
+        a {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 100%;
+          display: inline-block;
+        }
+      }
     }
   }
 }

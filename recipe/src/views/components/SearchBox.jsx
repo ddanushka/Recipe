@@ -21,7 +21,7 @@ function SearchBox() {
     <div className="search-bar">
       <FiSearch className="search-bar__icon" />
       <input placeholder="Search Recipes..." onChange={searchText} value={text} />
-      <button className="close" onClick={clearSearch}><FiX /></button>
+      <button className="close" onClick={clearSearch} disabled={!text && "disabled" }><FiX /></button>
     </div>
   );
 }
