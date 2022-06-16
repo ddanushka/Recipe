@@ -19,7 +19,7 @@ function Details() {
         setYoutube(getYoutubeID(details.strYoutube));
       })
       .catch((err) => setStatus(err.message));
-  }, [params.id]);
+  }, [details.strYoutube, params.id]);
 
   // get youtube video ID from the url
   const getYoutubeID = (link) => {
