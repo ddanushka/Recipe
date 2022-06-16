@@ -21,7 +21,12 @@ function List() {
 
   return (
     <div className="list">
-      <h1><button className="back-btn" onClick={() => navigate(-1)}><FiArrowLeft/></button>Recipes for "<span className="bold">{params.name}</span>"</h1>
+      <h1>
+        <button className="back-btn" onClick={() => navigate(-1)}>
+          <FiArrowLeft />
+        </button>
+        Recipes for "<span className="bold">{params.name}</span>"
+      </h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (

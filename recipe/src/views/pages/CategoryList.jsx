@@ -8,10 +8,11 @@ function CategoryList() {
   const [status, setStatus] = useState();
 
   useEffect(() => {
-    Categories().then((data) => {
-      setData(data.categories);
-    }).catch((err) => setStatus(err.message));
-
+    Categories()
+      .then((data) => {
+        setData(data.categories);
+      })
+      .catch((err) => setStatus(err.message));
   }, []);
 
   return (
