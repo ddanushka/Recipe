@@ -35,6 +35,7 @@ body {
     &:disabled {
       pointer-events: none;
     }
+    vertical-align: middle;
   }
 
   button,
@@ -219,24 +220,24 @@ body {
     // Listing styles for category
     .category-list {
       .list__container {
-        grid-template-columns: repeat(4, 16vw);
-        grid-auto-rows: 16vw;
-        grid-gap: 4vw;
+        grid-template-columns: repeat(5, 200px);
+        grid-auto-rows: 200px;
+        grid-gap: 40px;
         justify-content: space-between;
-        @media #{$large_and_up} {
-          grid-template-columns: repeat(5, 200px);
-          grid-auto-rows: 200px;
-          grid-gap: 40px;
+        @media #{$medium_to_large} {
+          grid-template-columns: repeat(4, 20vw);
+          grid-auto-rows: 20vw;
+          grid-gap: 4vw;
         }
         @media #{$small_to_medium} {
-          grid-template-columns: repeat(3, 26vw);
-          grid-auto-rows: 26vw;
-          grid-gap: 6vw;
+          grid-template-columns: repeat(3, 28vw);
+          grid-auto-rows: 28vw;
+          grid-gap: 3vw;
         }
         @media #{$small_and_down} {
-          grid-template-columns: repeat(2, 40vw);
-          grid-auto-rows: 40vw;
-          grid-gap: calc(20vw / 2);
+          grid-template-columns: repeat(2, 44vw);
+          grid-auto-rows: 44vw;
+          grid-gap: calc(8vw / 2);
         }
       }
     }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getRecipe } from "../../data/getData";
 import { useParams, useNavigate } from "react-router-dom";
+import { FiArrowLeftCircle } from "react-icons/fi";
 import Status from "../components/Status";
 
 function Details() {
@@ -37,7 +38,7 @@ function Details() {
       {details.strMeal ? (
         <>
           <h1 className="bold">
-            <button onClick={() => navigate(-1)}>Back |</button>{" "}
+            <button onClick={() => navigate(-1)}><FiArrowLeftCircle/></button>{" "}
             {details.strMeal}
           </h1>
           <div className="detail-grid">
