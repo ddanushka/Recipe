@@ -38,7 +38,7 @@ function Details() {
       {details.strMeal ? (
         <>
           <h1 className="bold">
-            <button onClick={() => navigate(-1)}><FiArrowLeftCircle/></button>{" "}
+            <button className="back-btn" onClick={() => navigate(-1)}><FiArrowLeftCircle/></button>
             {details.strMeal}
           </h1>
           <div className="detail-grid">

@@ -2,9 +2,11 @@ import Card from "../components/Card";
 import Status from "../components/Status";
 import { useState, useEffect } from "react";
 import { getCategory } from "../../data/getData";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { FiArrowLeftCircle } from "react-icons/fi";
 
 function List() {
+  let navigate = useNavigate();
   let params = useParams();
   const [data, setData] = useState([]);
   const [status, setStatus] = useState();
@@ -19,7 +21,7 @@ function List() {
 
   return (
     <div className="list">
-      <h1>Recipes for "<span className="bold">{params.name}</span>"</h1>
+      <h1><button className="back-btn" onClick={() => navigate(-1)}><FiArrowLeftCircle/></button>Recipes for "<span className="bold">{params.name}</span>"</h1>
       <div className="list__container">
         {data && data.length ? (
           data.map((item) => (
