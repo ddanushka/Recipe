@@ -9,7 +9,6 @@ function SearchResult() {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState();
 
-
   useEffect(() => {
     getSearchResult(params.keyword).then((data) => {
       setData(data.meals);
