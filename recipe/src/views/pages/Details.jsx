@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getRecipe } from "../../data/getData";
 import { useParams, useNavigate } from "react-router-dom";
-import { FiArrowLeftCircle } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
 import Status from "../components/Status";
 
 function Details() {
@@ -19,7 +19,7 @@ function Details() {
         setYoutube(getYoutubeID(details.strYoutube));
       })
       .catch((err) => setStatus(err.message));
-  }, [details.strYoutube, params.id]);
+  }, [params.id]);
 
   // get youtube video ID from the url
   const getYoutubeID = (link) => {
@@ -38,7 +38,7 @@ function Details() {
       {details.strMeal ? (
         <>
           <h1 className="bold">
-            <button className="back-btn" onClick={() => navigate(-1)}><FiArrowLeftCircle/></button>
+            <button className="back-btn" onClick={() => navigate(-1)}><FiArrowLeft/></button>
             {details.strMeal}
           </h1>
           <div className="detail-grid">
