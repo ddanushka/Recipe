@@ -45,14 +45,16 @@ function Details() {
           <div className="detail-grid">
             <div className="media">
               <img src={details.strMealThumb} alt={details.strMeal} />
-              <iframe
-                title={details.strMeal}
-                id="ytplayer"
-                type="text/html"
-                width="640"
-                height="360"
-                src={`https://www.youtube.com/embed/${youtube}`}
-              ></iframe>
+              {youtube && (
+                <iframe
+                  title={details.strMeal}
+                  id="ytplayer"
+                  type="text/html"
+                  width="640"
+                  height="360"
+                  src={`https://www.youtube.com/embed/${youtube}`}
+                ></iframe>
+              )}
             </div>
             <div className="decscription">
               <h2>Instructions</h2>
