@@ -56,6 +56,10 @@ body {
 
   .header {
     display: grid;
+    grid-template-columns: 44%;
+    @media #{$small_and_down}{
+      grid-template-columns: auto;
+    }
     height: 100px;
     justify-content: center;
     align-items: center;
@@ -79,8 +83,9 @@ body {
 
     .search-bar {
       position: relative;
-      max-width: 430px;
+      margin: 0 auto;
       z-index: 2;
+      width: 100%;
 
       input {
         font-size: 1.5rem;
