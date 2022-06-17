@@ -11,9 +11,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $clr_grey_light;
@@ -27,14 +25,17 @@ body {
   svg {
     stroke-width: 1px;
   }
+
   button {
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
+
     &:disabled {
       pointer-events: none;
     }
+
     vertical-align: middle;
   }
 
@@ -57,13 +58,16 @@ body {
   .header {
     display: grid;
     grid-template-columns: 44%;
-    @media #{$small_and_down}{
+
+    @media #{$small_and_down} {
       grid-template-columns: auto;
     }
+
     height: 100px;
     justify-content: center;
     align-items: center;
     position: relative;
+
     @media #{$small_and_down} {
       padding-left: 90px;
     }
@@ -72,9 +76,11 @@ body {
       display: flex;
       width: 200px;
       cursor: pointer;
+
       @media #{$small_and_down} {
         width: 88px;
       }
+
       left: 0;
       position: absolute;
       justify-content: center;
@@ -98,25 +104,30 @@ body {
         margin-right: 10px;
         outline: none;
         position: relative;
+
         &:focus,
         &:focus-visible {
           border-color: $clr_grey_dark;
         }
       }
+
       &__icon {
         left: 10px;
         opacity: 0.2;
         z-index: 1;
       }
+
       .close,
       &__icon {
         position: absolute;
         height: 100%;
         width: 40px;
       }
+
       .close {
         transition: ease 200ms;
         opacity: 0.6;
+
         &:hover {
           opacity: 1;
         }
@@ -128,9 +139,11 @@ body {
     overflow: auto;
     height: calc(100vh - 110px);
     padding: 0 40px 20px 36px;
+
     @media #{$small_and_down} {
       padding: 0 20px 20px 18px;
     }
+
     scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
@@ -150,15 +163,18 @@ body {
         background-color: $clr_off_white;
       }
     }
+
     .back-btn {
       margin-right: 10px;
     }
+
     .list__container {
       display: grid;
 
       .card {
         position: relative;
         overflow: hidden;
+
         &::after {
           content: "";
           position: absolute;
@@ -169,16 +185,19 @@ body {
           background-color: $clr_black_opacity;
           transition: ease 600ms;
         }
+
         &:hover {
           &::after {
             opacity: 0.4;
             z-index: -2;
           }
+
           img {
             filter: blur(0);
             transform: scale(1.06);
           }
         }
+
         a {
           display: flex;
           justify-content: center;
@@ -211,12 +230,15 @@ body {
         align-items: start;
         grid-template-columns: repeat(4, calc(25% - 24px));
         grid-gap: 32px;
+
         @media #{$small_to_medium} {
           grid-template-columns: repeat(3, calc(33% - 20px));
         }
+
         @media #{$small_and_down} {
           grid-template-columns: repeat(2, calc(50% - 16px));
         }
+
         .card {
           img {
             width: 100%;
@@ -232,16 +254,19 @@ body {
         grid-auto-rows: 200px;
         grid-gap: 40px;
         justify-content: space-between;
+
         @media #{$medium_to_large} {
           grid-template-columns: repeat(4, 20vw);
           grid-auto-rows: 20vw;
           grid-gap: 4vw;
         }
+
         @media #{$small_to_medium} {
           grid-template-columns: repeat(3, 28vw);
           grid-auto-rows: 28vw;
           grid-gap: 3vw;
         }
+
         @media #{$small_and_down} {
           grid-template-columns: repeat(2, 44vw);
           grid-auto-rows: 44vw;
@@ -263,6 +288,7 @@ body {
     height: 100vh;
     color: $clr_white;
     background-color: $clr_black_opacity;
+
     .status__text {
       font-size: 2rem;
       font-weight: 100;
@@ -271,52 +297,51 @@ body {
 
   // Recipe details page styles
   .recipe-details {
-    .detail-grid {  
+    .detail-grid {
       font-size: 1.2rem;
       line-height: 2rem;
       display: grid;
       grid-template-columns: repeat(4, calc(25% - 24px));
       grid-template-rows: auto;
       grid-gap: 32px;
-      grid-template-areas: 
-      "img img desc desc"
-      "img img ind ind"
-      ". . footer footer";
+      grid-template-areas: "img img desc desc" "img img ind ind" ". . footer footer";
+
       @media #{$small_and_down} {
         grid-template-columns: repeat(1, calc(100%));
-        grid-template-areas: 
-      "img" 
-      "desc"
-      "ind"
-      " ."
-      "footer";
+        grid-template-areas: "img" "desc" "ind" " ." "footer";
       }
-      
+
       .media {
         grid-area: img;
+
         img {
           width: 100%;
         }
+
         iframe {
           margin-top: 32px;
           width: 100%;
           border: none;
         }
       }
-      
+
       .decscription {
         white-space: pre-line;
         font-weight: 100;
         grid-area: desc;
       }
+
       .ind-list {
         grid-area: ind;
       }
+
       h2 {
         margin-top: 0;
       }
+
       i {
         grid-area: footer;
+
         a {
           text-overflow: ellipsis;
           overflow: hidden;
